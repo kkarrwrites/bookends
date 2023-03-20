@@ -9,14 +9,14 @@ router.get("/", withAuth, async (req, res) => {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
       // include: [{ model: Review }, {model: Review, include: [Book]}],
-      include: { all: true, nested: true }
+      include: { all: true, nested: true },
     });
 
     let user = userData.get({ plain: true });
     // user = JSON.stringify(user);
     console.log(user);
 
-    res.render("profile.handlebars", {
+    res.render("profile", {
       ...user,
       logged_in: true,
     });
