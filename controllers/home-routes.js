@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
 
     const books = bookData.map((book) => book.get({ plain: true }));
 
-    res.render("home", {
+    res.render("home.handlebars", {
       books,
       logged_in: req.session.logged_in,
     });
@@ -32,7 +32,10 @@ router.get("/book/:id", async (req, res) => {
 
     const book = dbBookData.get({ plain: true });
     console.log(book);
-    res.render("bookPage", { book, logged_in: req.session.logged_in });
+    res.render("bookPage.handlebars", {
+      book,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
