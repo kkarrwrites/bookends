@@ -7,6 +7,7 @@ Bookends was created with the intention of supporting and promoting banned books
 
 ## Application Showcase
 
+https://github.com/kkarrwrites/bookends/assets/57644505/589fe4bb-fc53-4663-9630-3820db9ea555
 
 ![README Screenshot](public/screenshots/screenshot01.png)
 
